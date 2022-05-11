@@ -1,0 +1,24 @@
+
+.carbox{
+    padding: 10px 5px;
+}
+.carbox img{
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-radius: 5px;
+}
+.carbox h1{
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.bookbtn{
+    color: #000;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+<div class="container mt-5 mb-5">
+
+    <div class="row">
+
+        <div class="col-lg-3 mt-3" *ngFor="let cd of carData; index as i">
+            <div class="carbox mt-3 mb-3">
+                <img src="{{cd.carImage}}">
+                <h1>{{cd. carName}}</h1>
+                <h1>{{cd.carBrand}}</h1>
+                <p>{{cd.carPrice  | currency:'INR'}}</p>
+                <br>
+                <a class="bookbtn" [routerLink]="['/menu', cd.id]">Book Now <i class="bi bi-geo-alt"></i></a>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
