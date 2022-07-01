@@ -11,11 +11,12 @@
 
         <div class="col-lg-6">
             <h1 style="font-weight:bold;">Enter Your Details</h1>
-            <form>
-                <input type="text" class="form-control" placeholder="Enter Your Full Name">
-                <input type="text" class="form-control" placeholder="Enter Your Mobile Phoone">
-                <textarea class="form-control" placeholder="Enter your Address"></textarea>
-                <button class="btn btn-md btn-dark mt-3">Place Booking</button>
+            <form (ngSubmit)="onSubmit()">
+                <input type="text" class="form-control" placeholder="Enter Your Full Name" [(ngModel)]="order.fullname" name="fullname">
+                <input type="text" class="form-control" placeholder="Enter Your Car Name" [(ngModel)]="order.carname" name="carname">
+                <input type="text" class="form-control" placeholder="Enter Your Mobile Phoone" [(ngModel)]="order.mobilephone" name="mobilephone">
+                <textarea class="form-control" placeholder="Enter your Address" [(ngModel)]="order.address" name="address"></textarea>
+                <button class="btn btn-md btn-dark mt-3" type="submit">Place Booking</button>
             </form>
         </div>
     </div>

@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookingDetailsService } from 'src/app/services/booking-details.service';
+import { Router } from '@angular/router';
+import { OrderService } from 'src/app/services/order.service';
+import { Order } from '../model/order';
+
+
 @Component({
   selector: 'app-menupage',
   templateUrl: './menupage.component.html',
   styleUrls: ['./menupage.component.css']
 })
 export class MenupageComponent implements OnInit {
+order: Order=new Order();
 
+constructor(private parm:ActivatedRoute, private service:BookingDetailsService, private orderService:OrderService, private router: Router) { }
 
-constructor(private parm:ActivatedRoute, private service:BookingDetailsService) { }
 getMenuId:any;
 menuData:any;
   ngOnInit(): void {
@@ -24,4 +30,19 @@ menuData:any;
     }
   }
 
+  saveOrder(){
+    this.orderService.createOrder(this.order).subscribe( data =>{
+      console.log(data);
+      this.goToOrderList();
+    },
+    error => console.log(error));
+  }
+  goToOrderList(){
+    this.router.navigate(['/orders']);
+  }
+
+  onSubmit(){
+    console.log(this.order);
+    this.saveOrder();
+  }
 }

@@ -1,0 +1,26 @@
+<div class = "row">
+    <h2> Order List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> Full Name</th>
+            <th> Mobile Phone </th>
+            <th> Address</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let order of orders" >
+            <td> {{ order.fullname }} </td>
+            <td> {{ order.mobilephone }} </td>
+            <td> {{ order.address}} </td>
+            <td>
+                <button (click) = "updateOrder(order.id)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deleteOrder(order.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "orderDetails(order.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
